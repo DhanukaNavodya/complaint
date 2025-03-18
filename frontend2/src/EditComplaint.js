@@ -26,7 +26,16 @@ const EditComplaint = () => {
     const fetchComplaint = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/complaints/${id}`);
-        setComplaint(response.data);
+  
+        
+        const data = response.data.Complaint; 
+  
+       
+        if (data.date) {
+          data.date = new Date(data.date).toISOString().slice(0, 16);
+        }
+  
+        setComplaint(data);
         setLoading(false);
       } catch (err) {
         console.error("Error fetching complaint:", err);
@@ -34,9 +43,10 @@ const EditComplaint = () => {
         setLoading(false);
       }
     };
-
+  
     fetchComplaint();
   }, [id]);
+  
 
   const handleChange = (e) => {
     setComplaint({ ...complaint, [e.target.name]: e.target.value });
@@ -61,7 +71,7 @@ const EditComplaint = () => {
     <div>
       <Nav />
       <h2>Edit Complaint</h2>
-
+      <h1>{complaint.complaintid}</h1>
       <form onSubmit={handleUpdate}>
         <div>
           <label>Complaint ID:</label>
@@ -81,12 +91,18 @@ const EditComplaint = () => {
 
         <div>
           <label>Service Provider:</label>
-          <input type="text" name="serviceProvider" value={complaint.serviceProvider} onChange={handleChange} />
+          <select value={complaint.serviceProvider} onChange={handleChange}>
+              <option value="">Select Provider</option>
+              <option value="provider1">Provider 1</option>
+              <option value="provider2">Provider 2</option>
+              <option value="provider3">Provider 3</option>
+            </select>
+          {/* <input type="text" name="serviceProvider" value={complaint.serviceProvider} onChange={handleChange} /> */}
         </div>
 
         <div>
           <label>Date & Time:</label>
-          <input type="datetime-local" name="date" value={complaint.date} onChange={handleChange} />
+          <input type="text" name="date" value={complaint.date} disabled  />
         </div>
 
         <div>

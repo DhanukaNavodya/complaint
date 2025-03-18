@@ -100,10 +100,7 @@ const AddComplaint = () => {
             <label>Date & Time:</label>
             <input type="text" value={new Date(date).toLocaleString()} onChange={(e) => setDate(e.target.value)} readOnly />
           </div>
-          {/* <div>
-            <label>Date & Time:</label>
-            <input type="datetime-local" value={date.substring(0, 16)} onChange={(e) => setDate(e.target.value)} required />
-          </div> */}
+          
 
           <div>
             <label>Location:</label>
