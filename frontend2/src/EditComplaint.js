@@ -71,7 +71,7 @@ const EditComplaint = () => {
     <div>
       <Nav />
       <h2>Edit Complaint</h2>
-      <h1>{complaint.complaintid}</h1>
+
       <form onSubmit={handleUpdate}>
         <div>
           <label>Complaint ID:</label>
