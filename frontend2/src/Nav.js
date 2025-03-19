@@ -27,7 +27,7 @@ function Nav() {
                 </Link>
             </li>
             <li className="ComplaintManagement">
-            <Link to="/complaintlist" className="active complaintmanagement">
+            <Link to="/showcomplaints" className="active complaintmanagement">
                 <h1>Show complaints</h1>
                 </Link>
             </li>

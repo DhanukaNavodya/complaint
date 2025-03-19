@@ -36,6 +36,7 @@ import AddComplaint from './AddComplaint';
 import DeleteComplaint from './DeleteComplaint';
 import EditComplaint from './EditComplaint';
 import ComplaintList from './ComplaintList';
+import ShowComplaints from './showComplaint'
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             <Route path="/deletecomplaint" element={<DeleteComplaint/>}/>
             <Route path="/complaintlist/:id" element={<EditComplaint/>}/>
             <Route path="/complaintlist" element={<ComplaintList/>}/>
+            <Route path="/showcomplaints" element={<ShowComplaints/>}/>
       </Routes>
       </React.Fragment>
     </Router>
