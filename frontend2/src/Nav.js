@@ -31,6 +31,11 @@ function Nav() {
                 <h1>Show complaints</h1>
                 </Link>
             </li>
+            <li className="ComplaintManagement">
+            <Link to="/ShowAllComplaints" className="active complaintmanagement">
+                <h1>Show All complaints</h1>
+                </Link>
+            </li>
         </ul>
     </div>
   )
