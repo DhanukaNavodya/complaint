@@ -1,33 +1,3 @@
-
-// import React from 'react';
-// import { Route, Routes } from "react-router";
-// import ReactFragement from 'react';
-
-
-
-// function App() {
-//   return (
-//       <div>
-//         <ComplaintManagement/>
-//         <AddComplaint/>
-//         <DeleteComplaint/>
-//         <EditComplaint/>
-//         <ComplaintList/>
-//         <ReactFragement>
-//           <Routes>
-           
-//           </Routes>
-//         </ReactFragement>
- 
-//         
-   
-//        </div>
-
-//   );
-// };
-
-// export default App;
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -39,6 +9,8 @@ import ComplaintList from './ComplaintList';
 import ShowComplaints from './showComplaint'
 import ShowAllComplaints from './showAllComplaints';
 import ComplaintById from "./complaintById";
+import User from  './User';
+import UserList from './UserList';
 function App() {
   return (
     <div>
@@ -54,6 +26,8 @@ function App() {
             <Route path="/showcomplaints" element={<ShowComplaints/>}/>
             <Route path="/ShowAllComplaints" element={<ShowAllComplaints/>}/>
             <Route path="/ShowAllComplaints/:id" element={<ComplaintById/>}/>
+            <Route path="/addUser" element={<User/>}/>
+            <Route path="/userList" element={<UserList/>}/>
       </Routes>
       </React.Fragment>
     </Router>
@@ -64,3 +38,5 @@ function App() {
 }
 
 export default App;
+
+
